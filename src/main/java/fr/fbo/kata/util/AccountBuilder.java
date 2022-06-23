@@ -6,6 +6,9 @@ import fr.fbo.kata.model.Transaction;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * @author Fayçal BOUACIDA
+ */
 public class AccountBuilder {
     private Long id;
     private BigDecimal balance;
@@ -17,6 +20,10 @@ public class AccountBuilder {
         this.transactions = transactions;
     }
 
+    /**
+     * build the account
+     * @return
+     */
     public Account build() {
         Account account =  new Account(this);
         return account;

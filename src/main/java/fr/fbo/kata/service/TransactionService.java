@@ -9,5 +9,10 @@ import java.util.List;
  * @author Fayçal BOUACIDA
  */
 public interface TransactionService {
+    /**
+     * get the transaction's history of the account
+     * @param account
+     * @return
+     */
     List<Transaction> getHistory(Account account);
 }

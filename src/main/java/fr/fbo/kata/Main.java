@@ -15,10 +15,17 @@ import java.util.Scanner;
 
 import static java.lang.System.exit;
 
+/**
+ * @author Fayçal BOUACIDA
+ */
 public class Main {
 
     private static final int MAX_OPTION = 4;
 
+    /**
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         Account account = new AccountBuilder(1L, BigDecimal.valueOf(0), new ArrayList<>()).build();
@@ -55,6 +62,10 @@ public class Main {
         }
     }
 
+    /**
+     *
+     * @param options
+     */
     public static void printMenu(String[] options) {
         for (String option : options) {
             System.out.println(option);
@@ -62,6 +73,12 @@ public class Main {
         System.out.print("Please enter the digit corresponding to your option : ");
     }
 
+    /**
+     *
+     * @param scanner
+     * @param account
+     * @param accountService
+     */
     private static void deposit(Scanner scanner, Account account, AccountService accountService) {
         System.out.print("Deposit amount : ");
         // read the deposit amount
@@ -71,6 +88,12 @@ public class Main {
         displayThanks();
     }
 
+    /**
+     *
+     * @param scanner
+     * @param account
+     * @param accountService
+     */
     private static void withdraw(Scanner scanner, Account account, AccountService accountService) {
         System.out.print("Withdraw amount : ");
         // read the withdraw amount
@@ -80,12 +103,19 @@ public class Main {
         displayThanks();
     }
 
+    /**
+     *
+     * @param account
+     */
     private static void showHistory(Account account) {
         TransactionService operationService = new TransactionServiceImpl();
         operationService.getHistory(account).forEach(transaction -> System.out.println(transaction.toString()));
         displayThanks();
     }
 
+    /**
+     *
+     */
     private static void displayThanks() {
         System.out.println("Thank you for using our service, something else to do ?\n");
     }

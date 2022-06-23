@@ -28,8 +28,8 @@ public class Account {
     }
 
     /**
-     *
-     * @param amount
+     * deposit a amount into the account
+     * @param amount an amount of money to deposit
      * @return
      * @throws OverdraftException
      */
@@ -41,7 +41,7 @@ public class Account {
     }
 
     /**
-     *
+     * pull a amount from a account
      * @param amount
      * @return
      * @throws OverdraftException

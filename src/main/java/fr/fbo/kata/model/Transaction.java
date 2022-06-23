@@ -18,6 +18,10 @@ public class Transaction {
     private final BigDecimal amount;
     private final TransactionType transactionType;
 
+    /**
+     *
+     * @param transaction
+     */
     public Transaction(TransactionBuilder transaction) {
         this.date = requireNonNull(transaction.getDate(), "Account date must not be null");
         this.balance = requireNonNull(transaction.getBalance(), "Balance must not be null");

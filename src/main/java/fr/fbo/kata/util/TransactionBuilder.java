@@ -6,6 +6,9 @@ import fr.fbo.kata.model.TransactionType;
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
 
+/**
+ * @author Fayçal BOUACIDA
+ */
 public class TransactionBuilder {
 
     private final TransactionType transactionType;
@@ -20,6 +23,10 @@ public class TransactionBuilder {
         this.balance = balance;
     }
 
+    /**
+     * build transaction
+     * @return
+     */
     public Transaction build() {
         Transaction transaction =  new Transaction(this);
         return transaction;
