@@ -1,4 +1,4 @@
-## sgcib-kata
+# sgcib-kata
 
 implementation of the User Stories below:
 
