@@ -1,24 +1,28 @@
 package fr.fbo.kata.model;
 
+import fr.fbo.kata.util.TransactionBuilder;
 
 import java.math.BigDecimal;
 import java.time.ZonedDateTime;
+
+import static java.util.Objects.requireNonNull;
 
 /**
  * @author Fayçal BOUACIDA
  */
 
 public class Transaction {
-    // combination of date, time and zone
+    // combination of date and time
     private final ZonedDateTime date;
+    private final BigDecimal balance;
     private final BigDecimal amount;
     private final TransactionType transactionType;
 
-    public Transaction() {
-        // TODO: must be init via object builder
-        this.date = null;
-        this.amount = null;
-        this.transactionType = null;
+    public Transaction(TransactionBuilder transaction) {
+        this.date = requireNonNull(transaction.getDate(), "Account date must not be null");
+        this.balance = requireNonNull(transaction.getBalance(), "Balance must not be null");
+        this.transactionType = requireNonNull(transaction.getTransactionType(), "transactionType must not be null");
+        this.amount = requireNonNull(transaction.getAmount(), "Amount must not be null");
     }
 
     public ZonedDateTime getDate() {
@@ -27,6 +31,10 @@ public class Transaction {
 
     public BigDecimal getAmount() {
         return amount;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
     }
 
     public TransactionType getTransactionType() {
